@@ -8,6 +8,11 @@ int main(int argc, char const *argv[])
 {
 	int m;
 	scanf("%d",&m);
+	if (m < 2)
+	{
+		printf("请输入大于2的正整数\n");
+		return 0;
+	}
 	printf("%d=",m);
 	if (isPrime(m))
 	{
