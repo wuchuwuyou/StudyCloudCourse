@@ -17,6 +17,7 @@ int main(int argc, char const *argv[])
 			if ( i % j == 0)
 			{
 				isOk = 0;
+				break;
 			}
 		}
 		if (isOk)
