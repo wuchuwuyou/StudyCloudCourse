@@ -40,7 +40,33 @@ void partitionStr(const char *str,char separator,char *source,char *sub){
 	strcpy(sub,p);
 }
 int deleteSubStr(const char *str,const char *subStr,char *resultStr){
-	int count = 0;
-	//TODO: 待添加替换字符
-	return count;
+  	int i=0,num=0;  
+    int sub_str_len=strlen(subStr);  
+    const char *temp;  
+    const char *p,*p1;  
+    char *q;  
+    p=str; p1=subStr;  
+    q=resultStr;  
+    while(*str)  
+    {  
+        if(*str==*subStr)    
+        {  
+            temp=str;  
+            while((*subStr)&&(*str++)==(*subStr++))   
+                i++;  
+            if(i==sub_str_len)   
+                num++;  
+            else  
+                for(int j=0;j<i;j++)  
+                {  
+                    *q++=*(temp+j);  
+                }  
+            subStr=p1;  
+            i=0;  
+        }  
+        else  
+            *q++=*str++;  
+    }  
+    printf("%s\n",resultStr);  
+    return num;  
 }
