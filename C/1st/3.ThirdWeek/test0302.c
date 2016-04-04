@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
 		y *= 2;
 		a /= 10;
 		s++;
-		printf("%d,%d,%d,%d\n",x,y,a,s);
+		// printf("%d,%d,%d,%d\n",x,y,a,s);
 	}while(a != 0);
 	printf("%d\n",x);
 	return 0;

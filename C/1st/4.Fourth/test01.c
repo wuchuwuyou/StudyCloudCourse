@@ -1,5 +1,7 @@
 #include "stdio.h"
 
+int isPrime(int a);
+
 int main(int argc, char const *argv[])
 {
 	//两数之间 素数和
@@ -8,26 +10,43 @@ int main(int argc, char const *argv[])
 	int max = m>n?m:n;
 	int min = m>n?n:m;
 	int sum = 0;
-	for (int i = min; i <= max; i++)
-	{
-		//素数
-		int isOk = 1;
-		for (int j = 2; j < i; j++)
+	int count = 0;
+	int i = 2;
+	while(count < max) {
+		int isOk = isPrime(i);
+		if (isOk == 1)
 		{
-			if ( i % j == 0)
+			count++;
+			if (count >=min)
 			{
-				isOk = 0;
-				break;
+				sum +=i;
 			}
 		}
-		if (isOk)
+		i++;
+	}
+
+	printf("%d\n",sum);
+
+	return 0;
+}
+int isPrime(int a) {
+	int isPrime = 1 ;
+	if (a == 2) return 1;
+	for (int i = 2; i < a; i++)
+	{
+		int n = a%i;
+		if (n == 0)
 		{
-			sum += i;
-			// printf("%d\n", i);
+			isPrime = n;
+			break;
 		}
 	}
 
-	printf("sum = %d\n",sum);
+	if (isPrime == 1)
+	{
+		return 1;
+	}else{
+		return -1;
 
-	return 0;
+	}
 }
