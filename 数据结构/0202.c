@@ -11,7 +11,7 @@ struct Node
 };
 
 List_node reverseList(List_node head,int k);
-void intputList(List_node &head,int address,int value,int next_address);
+void intputList(List_node head,int address,int value,int next_address);
 void printList(List_node head);
 
 
@@ -30,6 +30,22 @@ List_node reverseList(List_node head,int k){
 	head ->next->next = last;
 	return first;
 }
+void printNode(List_node head) {
+	while(head)
+	{
+		printf("%d %d %d \n",head->address,head->value,head->next_address);
+		head = head->next;
+	}
+}
+List_node listSort(List_node head, int first_address) {
+	List_node node = (List_node)malloc(sizeof(struct Node));
+	node->next_address = first_address;
+	node->next = head;
+	List_node first = node;
+	List_node tmp = node;
+	
+	return node->next;
+}
 
 int main(int argc, char const *argv[])
 {
@@ -38,12 +54,24 @@ int main(int argc, char const *argv[])
 	int num = 0;
 
 	scanf("%d %d %d",&first_address,&length,&num);
-	List_node source[] = (List_node)malloc(sizeof(struct Node) *length);
+	List_node head = (List_node)malloc(sizeof(struct Node));
+	head->next = NULL;
+	List_node tmp = head;
 	for (int i = 0; i < length; ++i)
-	{
+	{	
+
 		List_node n = (List_node)malloc(sizeof(struct Node));
-		scanf("%d %d %d",n->address,n->value,n->next_address);
-		source[i] = n;
+		n->next= NULL;
+		scanf("%d %d %d",&n->address,&n->value,&n->next_address);
+
+		tmp->next = n;
+		tmp = tmp->next;
 	}
+	printf("\n");
+	printNode(head->next);
+	List_node tmp1 = listSort(head->next,first_address);
+	printf("\n");
+	printNode(tmp1);
+
 	return 0;
 }
