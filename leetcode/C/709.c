@@ -6,7 +6,6 @@ char* toLowerCase(char* str) {
 		return str;
 	}
     char *p = str ;
-    char *q = p;
     while(*p) {
     	if (*p >= 'A' && *p <= 'Z')
     	{
@@ -15,7 +14,7 @@ char* toLowerCase(char* str) {
     	}
     	p++;
     }
-    return q;
+    return str;
 }
 
 
@@ -26,7 +25,13 @@ int main(int argc, char const *argv[])
 	char str2[] = "HELLOWORLD";
 	char str3[] = "hElLoWoRlD";
 	printf("%s\n", toLowerCase(str1));
+	printf("%s\n", str1);
+
 	printf("%s\n", toLowerCase(str2));
+	printf("%s\n", str2);
+
 	printf("%s\n", toLowerCase(str3));
+	printf("%s\n", str3);
+
 	return 0;
 }
