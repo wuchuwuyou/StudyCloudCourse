@@ -37,10 +37,11 @@ int uniqueMorseRepresentations(char** words, int wordsSize) {
 				*ms++ = *key++;
 			}
 			printf("ms:%s\n",q);
+			p++;
 		}
 		printf("p:%s\n",p);
-		printf("q:%s\n",q);
-		printf("ms:%s\n",ms);
+		// printf("q:%s\n",q);
+		// printf("ms:%s\n",ms);
 	}
 }
 
