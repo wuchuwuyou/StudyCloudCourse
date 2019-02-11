@@ -31,7 +31,7 @@ int projectionArea(int** grid, int gridRowSize, int *gridColSizes) {
 
             if(grid[i][j] > 0) sum++;
             row[i] = max(row[i],grid[i][j]);
-            col[j] = max(col[j],grid[i][j]);
+            col[j] = max(col[j],grid[j][i]);
         }
         sum += sumIntArray(col,gridColSizes[i]);
         free(col);
@@ -43,8 +43,5 @@ int projectionArea(int** grid, int gridRowSize, int *gridColSizes) {
 
 int main(int argc, char const *argv[])
 {
-    int arr[2][2] = {{1,2},{3,4}};
-    int col[2] = {2,2};
-    int max = projectionArea((int **)arr,2,(int *)col);
     return 0;
 }
