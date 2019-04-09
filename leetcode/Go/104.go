@@ -6,6 +6,6 @@
  *     Right *TreeNode
  * }
  */
- func maxDepth(root *TreeNode) int {
+func maxDepth(root *TreeNode) int {
     
 }
