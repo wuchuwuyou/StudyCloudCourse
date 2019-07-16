@@ -7,6 +7,8 @@
  * }
  */
 
+ //为啥呢
+
 func invertTree(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
