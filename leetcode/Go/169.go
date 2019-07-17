@@ -26,12 +26,14 @@ func majorityElement(nums []int) int {
 		if count == 0 {
 			res = nums[i]
 			count = 1
+			fmt.Printf("num:%d  count:%d\n",res,count)
 		} else {
 			if nums[i] == res {
 				count++
 			} else {
 				count--
 			}
+			fmt.Printf("num:%d  count:%d\n",res,count)
 		}
 	}
 
