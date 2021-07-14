@@ -5,6 +5,11 @@ type ListNode struct {
 	Next *ListNode
 }
 
+/**
+ * 快慢指针，慢指针一次移动一位 快指针一次移动两位
+ * 如果有环 那在某个时间点 快慢指针就会相遇
+ * 如果快指针为空，则表明没有环
+ */
 func hasCycle(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return false
@@ -19,7 +24,6 @@ func hasCycle(head *ListNode) bool {
 		}
 		slow = slow.Next
 		fast = fast.Next.Next
-		res = true
 	}
 	return res
 }
